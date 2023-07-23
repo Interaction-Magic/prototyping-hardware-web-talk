@@ -6,8 +6,7 @@ Demos and links from my talk `Prototyping with Hardware and the Web`.
 
 ### Parts to buy
 
-+ [Adafruit ItsyBitsy 32u4 - 5V 16MHz](https://www.adafruit.com/product/3677 
-)
++ [Adafruit ItsyBitsy 32u4 - 5V 16MHz](https://www.adafruit.com/product/3677)
 
 ### Demos from talk
 
@@ -49,6 +48,11 @@ Demos and links from my talk `Prototyping with Hardware and the Web`.
 
 ## 03 / Web Bluetooth
 
+### Parts to buy
+
++ [Adafruit ItsyBitsy nRF52840 Express](https://www.adafruit.com/product/4481)
++ More fancy - [Adafruit Feather nRF52840 Sense](https://www.adafruit.com/product/4516)
+
 ### Demo
 
 | Demo | HTML demo | Arduino source |
@@ -57,9 +61,9 @@ Demos and links from my talk `Prototyping with Hardware and the Web`.
 
 ### Reference links
 
-+ [Mozilla Standards Positions: WebUSB](https://mozilla.github.io/standards-positions/#webusb)
-+ [Arduino Create](https://create.arduino.cc/editor)
-+ [Microsoft micro:bit makecode](https://makecode.microbit.org/)
-+ Chrome device log: [chrome://device-log/](chrome://device-log/)
-+ [TextDecoder stream](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream)
-+ [Serial - transforming streams](https://developer.chrome.com/articles/serial/#transforming-streams)
++ [Introduction to Bluetooth LE](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt )
++ [Chrome developers blog intro](https://developer.chrome.com/articles/bluetooth/)
++ [Adafruit nRF52 learning guide](https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide)
++ [Apple Bluetooth advertising guidelines](https://developer.apple.com/library/archive/qa/qa1931/_index.html)
++ [What is NUS Nordic UART service?](https://devzone.nordicsemi.com/f/nordic-q-a/10567/what-is-nus-nordic-uart-service)
++ [Nordic datasheet: UART/Serial Port Emulation over BLE](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.sdk5.v15.3.0%2Fble_sdk_app_nus_eval.html)
