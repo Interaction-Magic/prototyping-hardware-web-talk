@@ -1,0 +1,46 @@
+html, body{margin:0; padding:0; height:100%; width: 100%; overflow: hidden; display:flex; justify-content: center; font-family: 'Poppins', sans-serif;}
+main{display:flex; flex-direction: column; align-items:center; max-height: 800px;}
+
+.no-web-bt-msg{position: absolute; inset:0 0 auto 0;  z-index: 100; color: white; padding:2em;}
+.no-web-bt-msg::before{position: absolute; inset:0; content:""; background:rgb(173, 4, 4); z-index:-10;}
+.no-web-bt-msg::after{position: absolute; inset:0; content:""; background:rgba(235, 235, 235, 0.6); height: 5000px; z-index:-20;}
+body:not([data-has-bt='false']) .no-web-bt-msg{display:none;}
+
+.bell{position:relative; max-width:100vw; height:100%; aspect-ratio: 620/840; -webkit-tap-highlight-color: transparent; user-select: none;}
+
+.bell, .bell::before, .bell::after{background: transparent no-repeat 0% 100% / contain;}
+.bell::before, .bell::after{content:""; position: absolute; inset:0; }
+
+.bell{background-image:url('imgs/ding.svg');}
+.bell::before{background-image:url('imgs/bell.svg'); z-index:20; transition: transform 0.05s ease-in;}
+.bell::after{background-image:url('imgs/dinger.svg'); z-index:10;}
+
+[data-bt-device='Bell-Green'] .bell{background-image:url('imgs/ding-green.svg');}
+[data-bt-device='Bell-Green'] .bell::before{background-image:url('imgs/bell-green.svg');}
+[data-bt-device='Bell-Orange'] .bell{background-image:url('imgs/ding-orange.svg');}
+[data-bt-device='Bell-Orange'] .bell::before{background-image:url('imgs/bell-orange.svg');}
+[data-bt-device='Bell-Red'] .bell{background-image:url('imgs/ding-red.svg');}
+[data-bt-device='Bell-Red'] .bell::before{background-image:url('imgs/bell-red.svg');}
+
+
+body:not([data-is-dinging='true']) .bell{background-image:none;}
+
+.bell:hover::after{transform: translateY(10px);}
+
+[data-bell-button='pushed'] .bell::after{transform: translateY(45px);}
+
+.button{position: relative; display:inline-block; text-transform: lowercase; font-size:clamp(1.8rem, 5vw, 2.5rem); color:black; text-decoration: none; padding:0.1em 0.3em; margin:1em 0; transform:rotate(3deg); font-weight: 600;}
+.button::before{content:""; inset:0; position: absolute; background:hsl(209, 79%, 83%); z-index:-10; transform:rotate(-1deg);}
+
+[data-bt-status='connecting'] .button{transform:rotate(-3deg);}
+[data-bt-status='connecting'] .button::before{background:rgb(251, 255, 192);}
+[data-bt-status='connecting'] .button::after{animation: dots 1s step-end infinite; content:'ing';}
+@keyframes dots {
+   0% { content:'ing.'; }
+   33% { content:'ing..';} 
+   66% { content:'ing...';} 
+}
+[data-bt-status='connected'] .button{transform:rotate(1deg);}
+[data-bt-status='connected'] .button::before{background:rgb(207, 255, 171);}
+[data-bt-status='connected'] .button::after{content:'ed!'}
+
