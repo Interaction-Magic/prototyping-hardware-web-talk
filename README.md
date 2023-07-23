@@ -48,3 +48,18 @@ Demos and links from my talk `Prototyping with Hardware and the Web`.
 + [Serial - transforming streams](https://developer.chrome.com/articles/serial/#transforming-streams)
 
 ## 03 / Web Bluetooth
+
+### Demo
+
+| Demo | HTML demo | Arduino source |
+| --- | --- | --- |
+| Bluetooth bell | [`bluetooth-bell.html`](https://interaction-magic.github.io/prototyping-hardware-web-talk/03_Web_Bluetooth/bluetooth-bell/bluetooth-bell.html) | [`bluetooth-bell-Arduino.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/03_Web_Bluetooth/bluetooth-bell-Arduino/bluetooth-bell-Arduino.ino) |
+
+### Reference links
+
++ [Mozilla Standards Positions: WebUSB](https://mozilla.github.io/standards-positions/#webusb)
++ [Arduino Create](https://create.arduino.cc/editor)
++ [Microsoft micro:bit makecode](https://makecode.microbit.org/)
++ Chrome device log: [chrome://device-log/](chrome://device-log/)
++ [TextDecoder stream](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream)
++ [Serial - transforming streams](https://developer.chrome.com/articles/serial/#transforming-streams)
