@@ -15,12 +15,12 @@ body:not([data-has-bt='false']) .no-web-bt-msg{display:none;}
 .bell::before{background-image:url('imgs/bell.svg'); z-index:20; transition: transform 0.05s ease-in;}
 .bell::after{background-image:url('imgs/dinger.svg'); z-index:10;}
 
-[data-bt-device='Bell-Green'] .bell{background-image:url('imgs/ding-green.svg');}
-[data-bt-device='Bell-Green'] .bell::before{background-image:url('imgs/bell-green.svg');}
-[data-bt-device='Bell-Orange'] .bell{background-image:url('imgs/ding-orange.svg');}
-[data-bt-device='Bell-Orange'] .bell::before{background-image:url('imgs/bell-orange.svg');}
-[data-bt-device='Bell-Red'] .bell{background-image:url('imgs/ding-red.svg');}
-[data-bt-device='Bell-Red'] .bell::before{background-image:url('imgs/bell-red.svg');}
+[data-ble-device='Bell-Green'] .bell{background-image:url('imgs/ding-green.svg');}
+[data-ble-device='Bell-Green'] .bell::before{background-image:url('imgs/bell-green.svg');}
+[data-ble-device='Bell-Orange'] .bell{background-image:url('imgs/ding-orange.svg');}
+[data-ble-device='Bell-Orange'] .bell::before{background-image:url('imgs/bell-orange.svg');}
+[data-ble-device='Bell-Red'] .bell{background-image:url('imgs/ding-red.svg');}
+[data-ble-device='Bell-Red'] .bell::before{background-image:url('imgs/bell-red.svg');}
 
 
 body:not([data-is-dinging='true']) .bell{background-image:none;}
@@ -32,15 +32,15 @@ body:not([data-is-dinging='true']) .bell{background-image:none;}
 .button{position: relative; display:inline-block; text-transform: lowercase; font-size:clamp(1.8rem, 5vw, 2.5rem); color:black; text-decoration: none; padding:0.1em 0.3em; margin:1em 0; transform:rotate(3deg); font-weight: 600;}
 .button::before{content:""; inset:0; position: absolute; background:hsl(209, 79%, 83%); z-index:-10; transform:rotate(-1deg);}
 
-[data-bt-status='connecting'] .button{transform:rotate(-3deg);}
-[data-bt-status='connecting'] .button::before{background:rgb(251, 255, 192);}
-[data-bt-status='connecting'] .button::after{animation: dots 1s step-end infinite; content:'ing';}
+[data-ble-status='connecting'] .button{transform:rotate(-3deg);}
+[data-ble-status='connecting'] .button::before{background:rgb(251, 255, 192);}
+[data-ble-status='connecting'] .button::after{animation: dots 1s step-end infinite; content:'ing';}
 @keyframes dots {
    0% { content:'ing.'; }
    33% { content:'ing..';} 
    66% { content:'ing...';} 
 }
-[data-bt-status='connected'] .button{transform:rotate(1deg);}
-[data-bt-status='connected'] .button::before{background:rgb(207, 255, 171);}
-[data-bt-status='connected'] .button::after{content:'ed!'}
+[data-ble-status='connected'] .button{transform:rotate(1deg);}
+[data-ble-status='connected'] .button::before{background:rgb(207, 255, 171);}
+[data-ble-status='connected'] .button::after{content:'ed!'}
 
