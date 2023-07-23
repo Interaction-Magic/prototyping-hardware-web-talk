@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+		<title>Serial read/write demo</title>
+
+		<style>
+			html, body{width: 100%; height:100%; margin:0; padding:0;}
+			body{background: hsl(0, 0%, 90%); display:flex; justify-content: center; align-items: center;}
+			a{font: 2rem sans-serif; display:inline-block; padding:0.5em 0.6em; background: hsl(0,0%, 80%); color:black; text-decoration: none;}
+			a:hover{filter: invert(100%);}
+		</style>
+	</head>
+
+	<body>
+		<a href="#connect">Connect to Serial device</a>
+
+		<script>
+
+		'use strict'
+
+		document.addEventListener("DOMContentLoaded", () => {
+
+			// Check if web Serial possible
+			if(!('serial' in navigator)){
+				alert("Web Serial API is not supported on this device")
+			}
+
+			// Connect button
+			document.querySelector('a[href="#connect"]').addEventListener("click", async (e) => {
+				e.preventDefault()
+				await serialConnect()
+			})
+		})
+
+		// //////////////////////////////////////////////////////
+		// Web serial
+
+		let port, outputStream
+
+		const serialConnect = async () => {
+			try{
+				// Request port and open it
+				port = await navigator.serial.requestPort()
+				await port.open({ baudRate: 9600 })
+			
+				serialReadLoop()
+
+				const encoder = new TextEncoderStream()
+				encoder.readable.pipeTo(port.writable)
+				outputStream = encoder.writable
+
+				setInterval(() => {
+					serialWrite('Hello everyone!');
+				}, 500)
+			}catch(e){
+				console.log(e)
+			}
+
+		}
+
+		const serialReadLoop = async () => {
+
+			while (port.readable) {
+
+				let reader = port.readable
+					.pipeThrough(new TextDecoderStream())
+					.getReader()
+
+				try{
+					while (true){
+						const { value, done } = await reader.read()
+						if(value){
+							console.log(`%cReceive: ${value}`, 'background:rgb(255, 251, 135)')
+						}
+						if(done){
+							reader.releaseLock()
+							break
+						}
+					}
+				}catch(e){
+					console.log(e)
+				}
+			}
+		}
+
+		// Send message to Serial
+		const serialWrite = (msg) => {
+			const writer = outputStream.getWriter()
+			writer.write(msg)
+			writer.releaseLock()
+			console.log(`%cSend: ${msg}`, 'background:rgb(151, 255, 170)')
+		}			
+		</script>
+	</body>
+</html>
