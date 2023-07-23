@@ -1,4 +1,39 @@
 # Prototyping with Hardware and the Web Talk
 
-All the links:
+Demos and links from my talk `Prototyping with Hardware and the Web`.
 
+## 01 / Everything is a Keyboard
+
+Parts to buy:
+
++ [Adafruit ItsyBitsy 32u4 - 5V 16MHz](https://www.adafruit.com/product/3677 
+)
+
+Demos from talk:
+
+| Demo | Arduino source |
+| --- | --- |
+| Basic keyboard button | [`simple-keyboard.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/01_Keyboard/simple-keyboard/simple-keyboard.ino) |
+| Mischief | [`mischief-delete-everything.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/01_Keyboard/mischief-delete-everything/mischief-delete-everything.ino) |
+| Mischief | [`mischief-close-programs.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/01_Keyboard/mischief-close-programs/mischief-close-programs.ino) |
+| Mischief | [`mischief-move-mouse.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/01_Keyboard/mischief-move-mouse/mischief-move-mouse.ino) |
+| Chrome dino game controller | [`chrome-dino-game.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/01_Keyboard/chrome-dino-game/chrome-dino-game.ino) |
+
+Other reference links:
+
++ [Arduino USB drivers for HID, MIDI, etc](https://github.com/adafruit/Adafruit_TinyUSB_Arduino)
++ [MakeyMakey](https://makeymakey.com/)
++ [Arduino keyboard modifiers](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/keyboardmodifiers/)
++ [Chrome dino game](chrome://dino)
+
+
+
+## 02 / Web USB
+
+| Demo | HTML demo | Arduino source |
+| --- | --- | --- |
+| Serial read/write | [`serial-read-write.html`](https://interaction-magic.github.io/prototyping-hardware-web-talk/02_Web_USB/serial-read-write/serial-read-write.html) | [`serial-read-write-Arduino.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/02_Web_USB/serial-read-write-Arduino/serial-read-write-Arduino.ino) |
+| Serial read/write with linebreak transformer | [`serial-read-write-fixed.html`](https://interaction-magic.github.io/prototyping-hardware-web-talk/02_Web_USB/serial-read-write/serial-read-write-fixed.html) | [`serial-read-write-Arduino.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/02_Web_USB/serial-read-write-Arduino/serial-read-write-Arduino.ino) |
+| Strech audio sensing | [`stretch-audio.html`](https://interaction-magic.github.io/prototyping-hardware-web-talk/02_Web_USB/stretch-audio/stretch-audio.html) | [`stretch-sensor-Arduino.ino`](https://raw.githubusercontent.com/Interaction-Magic/prototyping-hardware-web-talk/main/02_Web_USB/stretch-sensor-Arduino/stretch-sensor-Arduino.ino) |
+
+## 03 / Web Bluetooth
