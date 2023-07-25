@@ -61,7 +61,7 @@ const serialReadLoop = async () => {
 				if(value){
 					if(value.trim().length > 0){
 						// Convert to int
-						let level = parseInt(msg)
+						let level = parseInt(value.trim())
 
 						// Render the line graph
 						drawLine(level)
