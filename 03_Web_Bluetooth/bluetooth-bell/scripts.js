@@ -90,13 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const sendBLE = async (msg) => {
 		if(bleDevice && bleDevice.gatt.connected){
-			let bytes = new Uint8Array(msg.split('').map(char => char.charCodeAt(0)))
-			await rxCharacteristic.writeValue(bytes)
+			const encoder = new TextEncoder()
+			await rxCharacteristic.writeValue(encoder.encode(msg))
 		}
 	}
 
 	const receiveBLE = (event) => {
-		const msg = (bytesToStr(event.target.value))
+		const decoder = new TextDecoder()
+		const msg = decoder.decode(event.target.value)
 
 		switch(msg){
 			case 's':
@@ -111,15 +112,4 @@ document.addEventListener("DOMContentLoaded", () => {
    const disconnectedBLE = () => {
 		bodyData.bleStatus = 'disconnected'
 	}
-
-	// Convert raw data bytes to character values and use these to construct a string
-	const bytesToStr = (bytes) => {
-		let str = ""
-		for (let i = 0; i < bytes.byteLength; i++) {
-			if(bytes.getUint8(i) == 0) break
-			str += String.fromCharCode(bytes.getUint8(i))
-		}
-		return str
-	}
-
 });
