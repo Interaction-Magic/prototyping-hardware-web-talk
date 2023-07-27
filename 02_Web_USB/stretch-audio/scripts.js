@@ -32,7 +32,9 @@ let port, outputStream
 const serialConnect = async () => {
 	try{
 		// Request port and open it
-		port = await navigator.serial.requestPort()
+		port = await navigator.serial.requestPort({
+			filters: [{usbVendorId: 0x239A}]
+		})
 		await port.open({ baudRate: 9600 })
 	
 		serialReadLoop()
